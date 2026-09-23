@@ -8,3 +8,4 @@ jobs:
       - name: Hello Step
         run: |
           echo "Hello World GHA"
+          echo "Second GHA"
