@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Build Step
         run: |
-          echo "A Demo Build"
+          echo "A Demo Build For Test"
 
   test:
     runs-on: ubuntu-latest
