@@ -71,5 +71,44 @@ jobs:
 ## Executing Jobs in Parallel and Sequentially
 
 ```bash
+name: Hello World
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Step
+        run: |
+          echo "A Demo Build"
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Test Step
+        run: |
+          echo "Running a Build Test"
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Deploy Step
+        run: |
+          echo "Running a Deploy Stage"
 
 ```
+
+---
+
+## Github Actions Workflow Triggers & Types
+
+**Types of Triggers**
+
+1. Event-based triggers
+2. Manual triggers
+3. Scheduled triggers
+4. Workflow Triggers
+
+- **Push and Pull_Request triggers**
+  - 
