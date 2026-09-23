@@ -9,4 +9,4 @@ jobs:
     steps:
       - name: Variable
         run: |
-          echo "The Variable of Name=${MY_NAME}"
+          echo "The Variable of Name=${{vars.MY_NAME}}"
