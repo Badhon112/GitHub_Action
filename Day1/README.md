@@ -45,3 +45,25 @@
 
 ---
 
+## Creating Multiple Jobs in a single Workflow
+
+```bash
+name: Hello World
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Step
+        run: |
+          echo "A Demo Build"
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test Step
+        run: |
+          echo "Running a Build Test"
+
+```
