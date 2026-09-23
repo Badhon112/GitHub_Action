@@ -67,3 +67,9 @@ jobs:
           echo "Running a Build Test"
 
 ```
+
+## Executing Jobs in Parallel and Sequentially
+
+```bash
+
+```
