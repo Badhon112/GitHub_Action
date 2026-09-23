@@ -111,4 +111,12 @@ jobs:
 4. Workflow Triggers
 
 - **Push and Pull_Request triggers**
-  - 
+
+```bash
+
+name: Hello World
+on:
+  push:
+    branches:
+      - main
+```
