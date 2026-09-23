@@ -1,0 +1,16 @@
+name: My Awesome Workflow
+
+on:
+  push: # This workflow will trigger on a push event
+
+jobs:
+  build: # This name of your job within the workflow
+    runs-on: ubuntu-latest # This job will run on an ubuntu runner
+
+    steps:
+      - uses: actions/checkout@v3 # Checkout the code from the repository
+
+      # Add additional steps here to perform actions within your workflow
+      - name: Run Hello World # Example step to print a message
+        run: |
+          echo "Hello World"

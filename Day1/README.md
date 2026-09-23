@@ -1,0 +1,37 @@
+## What is Github Actions?
+
+- Github Actions is a continuous integration and continuous delivery (CI/CD) platform built directly into github
+
+- It allows you to automate various tasks within your software development workflow
+
+## Github Actions: Components
+
+- Workflows
+- Jobs
+- Events
+- Actions
+- Runners
+
+- _Workflows_
+  - A workflow is a configurable automated process that will run one or more jobs
+  - Workflows are defined in .github/workflows directory in a repository
+  - Workflows are defined by a YAML File
+
+- _Jobs_
+  - A job is a set of steps in a workflow that is executes on the same runner.
+  - Each step is either a shell script that will be executed, or an action that will be run
+  - Steps are executed in order and are dependent on each other
+
+- _Events_
+  - An Events is a specific activity in a repository that trigger a workflow run.
+  - For Example, activity can originate from Github when someone creates a pull request, opens an issue, or pushes a commit to a repository
+
+- _Actions_
+  - An actions is a custom application for the Github Actions platform that performs a complex but frequently repeated task
+  - Use an action to help reduce the amount of repetitive code that you write in your workflow files
+
+- _Runners_
+  - A runner is a server that runs your workflows when they're triggered, Each runner can run a single job at a time
+  - Github provides gitHosted runners also we can create self hosted runners to tun our workflows
+
+## Simple Workflow File
