@@ -34,4 +34,14 @@
   - A runner is a server that runs your workflows when they're triggered, Each runner can run a single job at a time
   - Github provides gitHosted runners also we can create self hosted runners to tun our workflows
 
-## Simple Workflow File
+---
+
+## Simple Workflow Structure
+
+- _Workflow1_
+  - Job : A job could be build job, deploy job
+    - Steps : Run a command
+    - Steps : Upload Docker Image TO
+
+---
+
