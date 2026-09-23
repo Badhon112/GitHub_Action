@@ -125,4 +125,22 @@ on:
 
 ## Working With Variables in WorkFlows
 
-- 
+```bash
+name: Variable
+on:
+  push:
+    branches:
+      - Badhon112
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Variable
+        run: |
+          echo "The Variable of Name=${{vars.MY_NAME}}"
+
+```
+
+---
+
+## Action in Github WorkFlow
