@@ -113,5 +113,15 @@ jobs:
 - **Push and Pull_Request triggers**
 
 ```bash
+<<<<<<< HEAD
 Want to Copy
 ```
+=======
+
+name: Hello World
+on:
+  push:
+    branches:
+      - main
+```
+>>>>>>> main
