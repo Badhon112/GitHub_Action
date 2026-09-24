@@ -104,3 +104,21 @@ Most production organization use a hybrid runner strategy where standard CI/CD w
 
 # DEMO
 
+```bash
+name: My First WorkFlow
+on: push
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        run: echo "Hello World From Step 1"
+      - name: Step 2
+        run: echo "Hello World From Step 2"
+  job-2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        run: echo "Job 2 executed after Job 2"
+
+```
