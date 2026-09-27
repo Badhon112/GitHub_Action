@@ -48,3 +48,6 @@ Github Actions uses reusable automation components called actions to simplify CI
 ## Demo 1: Building and Running a Flask Application inside Github Actions
 
 ![Demo 1: Building and Running a Flask Application inside Github Actions](./Demo.png)
+
+## Demo 2: Building and Pushing Docker Image using Github Actions
+
