@@ -81,3 +81,21 @@ on:
 
 ## Context
 
+```bash
+name: "02 - Understanding Events"
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+  schedule:
+    - cron: "*/5 * * * *" # Runs every 5 Minutes
+jobs:
+  event-info-jobs:
+    runs-on:
+      steps:
+        - name: Print Trigger Event
+          run: echo "My Trigger is ${{ github.event_name}} event "
+
+```
+
+## Github Hosted Runners : Standers vs larger Runners
