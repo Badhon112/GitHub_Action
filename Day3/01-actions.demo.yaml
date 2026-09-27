@@ -1,0 +1,20 @@
+name: 01 - Flask CI Workflow
+on:
+  push:
+jobs:
+  flask-ci-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+
+      - name: Build Docker Image
+        run: docker build -t flask-image:v1.0.0 ./Day3
+
+      - name: Run Container
+        run: docker run -d -p 5000:5000 --name flask-image-container flask-image:v1.0.0
+      
+      - name: Smoke Test
+        run: |
+          sleep 5
+          curl http:..localhost:5000/healthy
