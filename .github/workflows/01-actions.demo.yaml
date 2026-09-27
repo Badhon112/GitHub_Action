@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Build Docker Image
-        run: docker build -t flask-image:v1.0.0 ./Day3
+        run: docker build -t flask-image:v1.0.0 ./Day3/Demo1
 
       - name: Run Container
         run: docker run -d -p 5000:5000 --name flask-image-container flask-image:v1.0.0

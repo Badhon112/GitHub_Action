@@ -43,7 +43,7 @@ Github Actions uses reusable automation components called actions to simplify CI
   - Review documentation, release history, and issue activity
   - Inspect source code and required permissions whenever possible
 
-
+-> We will get a new Runner every Time we run a different Job
 
 ## Demo 1: Building and Running a Flask Application inside Github Actions
 
