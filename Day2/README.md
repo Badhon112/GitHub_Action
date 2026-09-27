@@ -4,6 +4,12 @@ A Trigger is an event or activity that starts workflow execution. Github Actions
 
 ## Triggers
 
+- Repository Events (push, pull_request, release, issues)
+- Manual Triggers (Workflow_dispatch)
+- Schedules Triggers (Schedule)
+- External Trigger (repository_dispatch)
+- Cross-Workflow Triggers (workflow_call)
+
 **Repository Events (push, pull_request, release, issues)**
 
 - Triggered automatically by repository activities
@@ -54,3 +60,24 @@ on:
 - Enables reusable workflow-based automation patterns
 - Commonly used for centralized CI/CD logic
 - UseCase: Organization-wide standardized pipelines
+
+---
+
+## There are 5 Types of Workflow Trigger
+
+1. **Repository Event**
+   - _push, pull_request, release, issues_
+2. **Manual Trigger**
+   - _workflow_dispatch_
+3. **Scheduled Trigger**
+   - _schedule_:
+     - cron : "_/5 _ \* \* \*"
+4. **External Trigger**
+   - Custom event payload (repository_dispatch)
+5. **Cross-Workflows Trigger**
+   - _workflow_call_
+
+---
+
+## Context
+

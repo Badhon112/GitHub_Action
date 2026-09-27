@@ -1,0 +1,21 @@
+name: Repository Event
+on:
+  push:
+    branches:
+      - Badhon112
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Event
+        run: echo "Hello World From Repository Event"
+---
+name: Manual Trigger
+on: workflow_dispatch
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Manual Trigger
+        run: echo "Hello World for Manual Trigger"
+---
