@@ -81,6 +81,8 @@ on:
 
 ## Context
 
+Context are collections of variables structured as objects that allow you to access information about workflows runs, runner environments, jobs, steps.
+
 ```bash
 name: "02 - Understanding Events"
 on:
