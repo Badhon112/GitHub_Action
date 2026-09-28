@@ -7,11 +7,11 @@ jobs:
 
     steps:
       - name: Badhon112
-        if: ${{ github.ref == "refs/heads/Badhon112" }}
+        if: ${{ github.ref == 'refs/heads/Badhon112' }}
         run: |
           echo "Hello From refs/heads/Badhon112"
 
       - name: badhon112
-        if: ${{ github.ref == "refs/heads/badhon112" }}
+        if: ${{ github.ref == 'refs/heads/badhon112' }}
         run: |
           echo "Hello From refs/heads/badhon112"
