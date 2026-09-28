@@ -11,7 +11,7 @@ jobs:
         run: |
           echo "Hello From refs/heads/Badhon112"
 
-      - name: badhon112
+      - name: main
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
           echo "Hello From main"
