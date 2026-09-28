@@ -6,7 +6,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Ref Name
+      - name: Badhon112
+        if: ${{ github.ref === "refs/heads/Badhon112"}}
         run: |
-          echo ref: "${{ github.ref }}"
-          echo ref_name: "${{ github.ref_name }}"
+          echo "Hello From refs/heads/Badhon112"
+
+      - name: badhon112
+        if: ${{ github.ref === "refs/heads/badhon112"}}
+        run: |
+          echo "Hello From refs/heads/badhon112"
