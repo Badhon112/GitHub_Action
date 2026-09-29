@@ -13,20 +13,21 @@ _Example_
 
 ```bash
 name: 01 - Steps Outputs
-
 on: push
 
 jobs:
   steps-job-output:
     runs-on: ubuntu-latest
     steps:
-      - name: Generate Release Version
-        id: version
-        run: |
-          echo "release_version=v1.0.0" >> $GITHUB_OUTPUT
-      - name: Display Release Version
-        run: |
-          echo "${{steps.version.outputs}}"
+        - name: Generate Release Version
+          id: version
+          run: |
+            echo "release_version=v1.0.0" >> $GITHUB_OUTPUT
+        - name: Display Release Version
+          run: |
+            echo "${{steps.version.outputs.release_version}}"
+
+
 
 ```
 
