@@ -12,5 +12,5 @@ jobs:
             echo "release_version=v1.0.0" >> $GITHUB_OUTPUT
         - name: Display Release Version
           run: |
-            echo "${{steps.version.outputs}}"
+            echo "${{steps.version.outputs.*}}"
 
