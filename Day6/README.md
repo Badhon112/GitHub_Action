@@ -100,3 +100,97 @@ Example: Github API Run and Github CLI Run
   - Select a Github Environment
 
 ---
+
+## Reusable Actions
+
+_Example_
+
+```bash
+# ----------------------------------------------
+# ./.github/workflows/deploy.yaml
+# ----------------------------------------------
+
+name: 01 - Reusable Deployment Workflow
+
+on:
+  workflow_call:
+    inputs:
+      application_name:
+        required: true
+        type: string
+      run_security_scan:
+        required: true
+        type: string
+      replicas:
+        required: true
+        type: string
+jobs:
+  deploy-application-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display Deployment Parameters
+        run: |
+          echo "Application: ${{inputs.application_name}}"
+          echo "Run Security Scan: ${{inputs.run_security_scan}}"
+          echo "Replicas: ${{inputs.replicas}}"
+
+      - name: Security Validation
+        if: ${{inputs.run_security_scan}}
+        run: |
+          echo "Running Security Scan ..."
+          echo "No critical vulnerabilities found ..."
+
+      - name: Deploy Application
+        run: |
+          echo "Deploying ${{inputs.application_name}}"
+          echo "Desired Replicas: ${{inputs.replicas}}"
+
+      - name: Deployment Complete
+        run: |
+          echo "Deployment Completed successfully"
+
+# ----------------------------------------------
+# ./.github/workflows/payment-svc-deploy.yaml
+# ----------------------------------------------
+
+name: 02 - Payment Service Deployment Calling
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  run-unit-tests-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute Unit Tests
+        run: |
+          echo "Running Payment service unit tests ..."
+          echo "All tests passed"
+
+  build-payment-artifacts-job:
+    runs-on: ubuntu-latest
+    needs:
+      - run-unit-tests-job
+    steps:
+      - name: Build Payment Artifacts
+        run: |
+          echo "Building Payment service artifacts..."
+          echo "Artifacts generated successfully"
+
+  deploy-payment-service-job:
+    needs:
+      - run-unit-tests-job
+      - build-payment-artifacts-job
+
+    uses: ./.github/workflows/deploy.yaml
+
+    with:
+      application_name: payment-service
+      run_security_scan: true
+      replicas: 5
+
+```
+
+and
