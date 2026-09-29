@@ -1,0 +1,30 @@
+name: 01 - Input Workflows
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Deployment Environment
+        required: true
+        type: choice
+        default: dev
+        options:
+          - dev
+          - qa
+          - prod
+      application_name:
+        required: true
+        type: string
+      run_security_scan:
+        required: true
+        type: boolean
+      replicas:
+        required: true
+        type: number
+jobs:
+  deploy:
+    uses: ./.github/workflows/deploy.yaml
+    with:
+      application_name: payment-service
+      run_security_scan: true
+      replicas: 2
+
