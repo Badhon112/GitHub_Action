@@ -17,7 +17,7 @@ jobs:
         run: |
           echo "Display Application ..."
           sleep 5
-          echo "Deployment_URL=BadhonBiswas.dev"
+          echo "deployment_url=BadhonBiswas.dev" >> $GITHUB_OUTPUT
 
       - name: Display Release Version
         run: |
@@ -27,4 +27,4 @@ jobs:
         run: |
           echo "Application deployed successfully"
           echo "Deployment URL"
-          echo "${{steps.deploy.outputs.Deployment_URL}}"
+          echo "${{steps.deploy.outputs.deployment_url}}"
