@@ -8,7 +8,7 @@ jobs:
       - name: Deploy Application
         id: deploy
         run: |
-          echo "deployment_url="http://badhonbiswas.com" >> $GITHUB_OUTPUT
+          echo "deployment_url=http://badhonbiswas.com" >> $GITHUB_OUTPUT
     outputs:
       deployment_URL: ${{steps.deploy.outputs.deployment_url}}
 
