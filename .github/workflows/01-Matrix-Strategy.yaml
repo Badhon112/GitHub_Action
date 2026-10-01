@@ -1,0 +1,17 @@
+name: 01 - Matrix Strategy Workflows
+on: workflow_dispatch
+
+jobs:
+  test-job:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ["3.11", "3.12", "3.13"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: SetUp Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run Tests
+        run: pytest
