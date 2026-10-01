@@ -1,0 +1,25 @@
+name: Docker Build & Push (Composite Action)
+
+on: workflow_dispatch
+
+jobs:
+  docker-build-push-job:
+    name: Docker Build & Push (Composite Action)
+
+    runs-on: ubuntu-latest
+
+    env:
+      IMAGE_NAME: ${{ vars.DOCKER_IMAGE_NAME }}
+      IMAGE_TAG: ${{ github.run_number }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7
+
+      - name: Build & Push Docker Image
+        uses: ./.github/actions/action.yaml
+        with:
+          dockerhub-username: ${{ vars.dockerhub-username }}
+          dockerhub-token: ${{ secrets.dockerhub-token }}
+          image-name: ${{ env.image-name }}
+          image-tag: ${{ env.image-tag }}
